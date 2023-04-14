@@ -1,0 +1,23 @@
+version: '3'
+services:
+  firefox:
+    image: marcusdbase/firefoxovpn
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    security_opt:
+      - seccomp:unconfined #optional
+    devices:
+      - /dev/net/tun
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Amsterdam    
+    volumes:
+      - ./firefox/:/config
+      - ./openvpn.conf:/etc/openvpn/openvpn.conf
+      - ./auth:/etc/openvpn/auth
+    ports:
+      - "3001:3000"
+    shm_size: "2gb"
+    restart: unless-stopped
