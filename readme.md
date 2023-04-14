@@ -7,7 +7,6 @@ A imagem é baseada na imagem lscr.io/linuxserver/firefox:latest, e foi modifica
 Antes de usar, certifique-se de ter o Docker e o docker-compose instalados em seu sistema. Depois, siga as instruções abaixo:
 Este comando criará e iniciará o contêiner com a imagem modificada.
 
-Acesse o Firefox digitando http://localhost:3001 no seu navegador.
 1. Clone este repositório em sua máquina local:
 
 ```bash
